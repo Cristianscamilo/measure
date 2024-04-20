@@ -12,7 +12,7 @@ const Login = ({ status, showPassword }) => {
           className={styles.img}
         />
         <h3 className={styles.title}>Mea Sure</h3>
-        <form action="" className={styles.form}>
+        <form className={styles.form}>
           <input type="text" placeholder="User" autoComplete="current-user" />
           <input
             type={showPassword ? "text" : "password"}

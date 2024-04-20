@@ -1,11 +1,8 @@
-import { useState } from "react";
+import useShowPAssword from "../../../hooks/useShowPAssword";
 import Login from "./Login";
 
 const LoginContainer = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const status = () => {
-    setShowPassword(!showPassword);
-  };
+  const [status, showPassword] = useShowPAssword(false);
   return <Login status={status} showPassword={showPassword} />;
 };
 
