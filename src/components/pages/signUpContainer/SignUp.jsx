@@ -7,7 +7,7 @@ const SignUp = ({ status, showPassword }) => {
     <>
       <article className={styles.signUp}>
         <img
-          src="https://res.cloudinary.com/dzivhovxf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1706808980/webreact/zorroia.jpg"
+          src="https://res.cloudinary.com/dzivhovxf/image/upload/v1713806673/webreact/logo/zorroiaCircle_n7valc.jpg"
           alt="logo Mea Sure"
           className={styles.img}
         />
@@ -34,7 +34,7 @@ const SignUp = ({ status, showPassword }) => {
             autoComplete="current-gender"
           />
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Password"
             autoComplete="current-password"
           />
@@ -44,8 +44,10 @@ const SignUp = ({ status, showPassword }) => {
             autoComplete="current-confirm-password"
           />
           <p className={styles.paragraph}>
-            By completing registration, you accept our <span>Legal Terms</span>,{" "}
-            <span>Privacy Policy</span> and <span>Cookies Policy</span>.
+            By completing registration, you accept our{" "}
+            <span className={styles.span}>Legal Terms</span>,{" "}
+            <span className={styles.span}>Privacy Policy</span> and{" "}
+            <span className={styles.span}>Cookies Policy</span>.
           </p>
           <button className={styles.button}>Sign Up</button>
           {showPassword ? (
@@ -63,7 +65,8 @@ const SignUp = ({ status, showPassword }) => {
           )}
         </form>
         <p className={styles.paragraphLogIn}>
-          I already have an account! <span> Log in</span>
+          I already have an account!{" "}
+          <span className={styles.span}> Log in</span>
         </p>
       </article>
     </>

@@ -1,1 +1,23 @@
-@import './normalize.css';
+@import "./normalize.css";
+
+/*
+Variable reutilizables
+*/
+
+:root {
+  /*text*/
+  --color-primary: rgb(226, 147, 20);
+  --color-secondary: rgb(2, 2, 2);
+  --color-error:rgb(255, 0, 0);
+  /*background*/
+  --color-background: rgb(37, 44, 54);
+  --input-color-background: #fff;
+  /*Pseudo-classes*/
+  --hover-color: rgb(247, 167, 39);
+  --hover-color-link: #0091ff; 
+  /* Fonts title */
+  --font-settings: "Jersey 10", sans-serif;
+  --font-weight: 400;
+  --font-size-title: 50px;
+  --color-title: #fff;
+}
