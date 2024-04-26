@@ -57,7 +57,7 @@
 }
 
 .forgotPassword {
-  color: var(--color-primary);
+  color: var(--link-color-text);
   border: none;
   background-color: var(--color-background);
 }
@@ -76,7 +76,7 @@
 }
 
 .button:hover {
-  background-color: var(--hover-color);
+  background-color: var(--hover-color-button);
 }
 
 .showHide {
@@ -87,8 +87,9 @@
   cursor: pointer;
 }
 .paragraph {
-  color: var(--color-primary);
+  color: var(--color-title);
 }
+
 .span:hover {
   color: var(--hover-color-link);
   cursor: pointer;

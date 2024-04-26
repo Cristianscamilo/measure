@@ -1,5 +1,5 @@
 .signUp {
-  background-color: var( --color-background);
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -27,7 +27,7 @@
 }
 
 .paragraph {
-  color: var(--color-primary);
+  color: var(--color-title);
   font-size: 14px;
   margin: 10px;
   padding: 10px 30px;
@@ -60,7 +60,7 @@
 }
 
 .button:hover {
-  background-color: var(--hover-color);
+  background-color: var(--hover-color-button);
 }
 
 .showHide {
@@ -72,16 +72,17 @@
 }
 
 .paragraphLogIn {
-  color: var(--color-primary);
+  color: var(--color-title);
   font-size: 15px;
   margin: 10px;
   padding: 10px 30px;
 }
-.span{
+.span {
   cursor: pointer;
+  color: var(--link-color-text);
 }
 
-.span:hover{
+.span:hover {
   color: var(--hover-color-link);
   cursor: pointer;
 }

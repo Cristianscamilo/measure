@@ -1,6 +1,7 @@
 import styles from "./SignUp.module.css";
 import { BsFillEyeFill } from "react-icons/bs";
 import { BsFillEyeSlashFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const SignUp = ({ status, showPassword }) => {
   return (
@@ -27,7 +28,7 @@ const SignUp = ({ status, showPassword }) => {
             placeholder="Username"
             autoComplete="current-username"
           />
-          <input type="number" min="5" max="120" step="1" placeholder="Age" />
+          <input type="number" placeholder="Age" />
           <input
             type="text"
             placeholder="Gender"
@@ -50,6 +51,7 @@ const SignUp = ({ status, showPassword }) => {
             <span className={styles.span}>Cookies Policy</span>.
           </p>
           <button className={styles.button}>Sign Up</button>
+
           {showPassword ? (
             <BsFillEyeSlashFill
               onClick={status}
@@ -66,7 +68,9 @@ const SignUp = ({ status, showPassword }) => {
         </form>
         <p className={styles.paragraphLogIn}>
           I already have an account!{" "}
+          <Link to="/">
           <span className={styles.span}> Log in</span>
+          </Link>
         </p>
       </article>
     </>

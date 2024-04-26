@@ -8,16 +8,28 @@ Variable reutilizables
   /*text*/
   --color-primary: rgb(226, 147, 20);
   --color-secondary: rgb(2, 2, 2);
-  --color-error:rgb(255, 0, 0);
+  --color-error: rgb(255, 0, 0);
   /*background*/
   --color-background: rgb(37, 44, 54);
   --input-color-background: #fff;
   /*Pseudo-classes*/
-  --hover-color: rgb(247, 167, 39);
-  --hover-color-link: #0091ff; 
+  --hover-color-button: rgb(240, 150, 7);
+  --hover-color-link: #0091ff;
+  --link-color-text: rgb(247, 167, 39);
   /* Fonts title */
   --font-settings: "Jersey 10", sans-serif;
   --font-weight: 400;
   --font-size-title: 50px;
   --color-title: #fff;
+}
+
+:link {
+  color: var(--link-color-text);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+:visited {
+  color: rgb(185, 29, 185);
+  cursor: pointer;
 }

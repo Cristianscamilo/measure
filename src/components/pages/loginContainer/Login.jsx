@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import styles from "./Login.module.css";
 import { BsFillEyeFill } from "react-icons/bs";
 import { BsFillEyeSlashFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Login = ({ status, showPassword }) => {
   const { handleSubmit, handleChange, errors } = useFormik({
@@ -71,7 +72,9 @@ const Login = ({ status, showPassword }) => {
         </form>
         <p className={styles.paragraph}>
           Don&apos;t have an account?
+          <Link to="/signUp">
           <span className={styles.span}> Sign up</span>
+          </Link>
         </p>
       </article>
     </>
