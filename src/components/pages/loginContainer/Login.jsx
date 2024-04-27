@@ -53,9 +53,11 @@ const Login = ({ status, showPassword }) => {
           <button type="button" className={styles.forgotPassword}>
             Forgot Password?
           </button>
+          <Link to="/budget">
           <button type="submit" className={styles.button}>
             Log in
           </button>
+          </Link>
           {showPassword ? (
             <BsFillEyeSlashFill
               onClick={status}

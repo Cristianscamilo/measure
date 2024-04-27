@@ -1,14 +1,27 @@
-import { useState } from "react"
+import { useState } from "react";
 
-const useShowPassword = (state = false) => {
-    const [showPassword, setShowPassword] = useState(state);
-const status = () => {
-  setShowPassword(!showPassword);
+export const useShowPassword = (state = false) => {
+  const [showPassword, setShowPassword] = useState(state);
+  const status = () => {
+    setShowPassword(!showPassword);
+  };
+  return [status, showPassword];
 };
-  return [
-    status,
-    showPassword
-  ]
-}
 
-export default useShowPassword
+export const useCounter = (initial = 1) => {
+  const [counter, setCounter] = useState(initial);
+
+  const addOne = () => {
+    if (counter >= 0) {
+      setCounter(counter + 1);
+    }
+  };
+
+  const subOne = () => {
+    if (counter >= 1) {
+      setCounter(counter - 1);
+    }
+  };
+
+  return [addOne, subOne, counter];
+};

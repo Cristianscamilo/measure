@@ -1,4 +1,4 @@
-import useShowPassword from "../../../hooks/useShowPassword";
+import {useShowPassword} from "../../../hooks/useShowPassword";
 import SignUp from "./SignUp";
 
 const SignUpContainer = () => {
