@@ -16,6 +16,7 @@ Variable reutilizables
   --hover-color-button: rgb(240, 150, 7);
   --hover-color-link: #0091ff;
   --link-color-text: rgb(247, 167, 39);
+  --focus-color-button: rgb(247, 167, 39);
   /* Fonts title */
   --font-settings: "Jersey 10", sans-serif;
   --font-weight: 400;

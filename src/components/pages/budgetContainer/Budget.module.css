@@ -7,6 +7,7 @@
 
 fieldset {
   border: none;
+  width: 320px;
 }
 
 legend {
@@ -14,8 +15,15 @@ legend {
   margin-bottom: 10px;
   font-size: 20px; 
 }
+.select{
+  overflow-y: auto;
+  width: 300px;
+  outline: none;
+  padding: 8px;
+  max-height: 40px;
+}
 .input{
-    margin: 20px;
+    margin: 10px;
     width: 310px;
     height: 50px;
     border-radius: 8px;
@@ -30,7 +38,9 @@ label {
   margin-bottom: 20px; 
 }
 .total{
-    font-size: 25px;
+    font-size: 20px;
+    margin: 10px;
+    font-weight: bold;
 }
 
 .divButton{
@@ -40,7 +50,7 @@ label {
 }
 .button{
     background-color: var(--color-primary);
-    width: 45vw;
+    width: 150px;
     height: 40px;
     border-radius: 8px;
     cursor: pointer;
@@ -48,4 +58,11 @@ label {
     margin: 5px;
 }
 
+.button :focus{
+  color: var(--focus-color-button);
+}
+
+.button:hover {
+  background-color: var(--hover-color-button);
+}
 

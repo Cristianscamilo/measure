@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
+
 const BudgetList = ({ addOne, SubOne, counter }) => {
   return (
     <>
-      <button>return to budget</button>
       <article>
         <h4>Product</h4>
         <p>
@@ -27,7 +28,10 @@ const BudgetList = ({ addOne, SubOne, counter }) => {
           </p>
         )}
       </article>
-      <button>Guardar Cambios</button>
+      <Link to="/budget">
+        <button>Return to budget</button>
+      </Link>
+      <button>Save</button>
     </>
   );
 };

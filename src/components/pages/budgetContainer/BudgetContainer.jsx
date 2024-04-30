@@ -6,7 +6,8 @@ const BudgetContainer = () => {
     <>
       <h3
         style={{
-          margin: "10px",
+          width: "350px",
+          margin: "20px 10px 20px 30px",
           fontSize: "60px",
           fontFamily: "var(--font-settings)",
         }}
