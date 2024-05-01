@@ -1,16 +1,24 @@
 import { Link } from "react-router-dom";
 import styles from "./Budget.module.css";
 
-const Budget = () => {
+const Budget = ({
+  budgetList,
+  addOne,
+  SubOne,
+  counter,
+  handleSubmit,
+  handleChange,
+}) => {
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <fieldset>
         <legend>Category</legend>
         <input
           type="text"
           className={styles.input}
-          name="Category"
+          name="category"
           placeholder="Category"
+          onChange={handleChange}
         />
       </fieldset>
       <fieldset>
@@ -20,6 +28,7 @@ const Budget = () => {
           className={styles.input}
           name="productName"
           placeholder="Product name"
+          onChange={handleChange}
         />
         <input
           type="text"
@@ -32,23 +41,46 @@ const Budget = () => {
           className={styles.input}
           name="unitPrice"
           placeholder="Unit price"
+          onChange={handleChange}
         />
-        <input
-          type="number"
-          className={styles.input}
-          name="quantity"
-          placeholder="Quantity"
-        />
+        <p>
+          <strong>Quantity:</strong>
+          <button
+            type="button"
+            className={counter == 1 ? styles.disabled : styles.buttonQuantity}
+            onClick={SubOne}
+            disabled={counter == 1 ? true : false}
+          >
+            -
+          </button>
+          <input
+            type="number"
+            className={styles.quantity}
+            name="quantity"
+            value={counter}
+            onChange={handleChange}
+          />
+          <button
+            type="button"
+            className={styles.buttonQuantity}
+            onClick={addOne}
+          >
+            +
+          </button>
+        </p>
         <span className={styles.total}>Total: $45.000</span>
       </fieldset>
       <div className={styles.divButton}>
         <Link to="/budgetList">
-          <button className={styles.button} type="button">
-            List
+          <button
+            className={budgetList.length == 0 ? styles.block : styles.button}
+            type="button"
+          >
+            List ({budgetList.length})
           </button>
         </Link>
         <button className={styles.button} type="submit">
-          Upload
+          Upload to Budget
         </button>
       </div>
     </form>

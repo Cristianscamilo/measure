@@ -13,56 +13,95 @@ fieldset {
 legend {
   font-weight: bold;
   margin-bottom: 10px;
-  font-size: 20px; 
+  font-size: 20px;
 }
-.select{
+.select {
   overflow-y: auto;
   width: 300px;
   outline: none;
   padding: 8px;
   max-height: 40px;
 }
-.input{
-    margin: 10px;
-    width: 310px;
-    height: 50px;
-    border-radius: 8px;
-    border: none;
-    background-color: var(--color-background);
-    color: var(--color-title);
-    font-size: 20px;
-    padding: 10px;
+.input {
+  margin: 10px;
+  width: 310px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--color-background);
+  color: var(--color-title);
+  font-size: 20px;
+  padding: 10px;
 }
 
 label {
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
-.total{
-    font-size: 20px;
-    margin: 10px;
-    font-weight: bold;
-}
-
-.divButton{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.button{
-    background-color: var(--color-primary);
-    width: 150px;
-    height: 40px;
-    border-radius: 8px;
-    cursor: pointer;
-    border: none;
-    margin: 5px;
+.total {
+  font-size: 20px;
+  margin: 10px;
+  font-weight: bold;
 }
 
-.button :focus{
+.divButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.button {
+  background-color: var(--color-primary);
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  margin: 5px;
+}
+.buttonQuantity {
+  background-color: var(--color-primary);
+  width: 50px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  margin: 0 10px 0 10px;
+  font-weight: bold;
+}
+
+.disabled {
+  background-color: var(--color-background-disbled);
+  color: var(--input-color-background);
+  width: 50px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  margin: 0 10px 0 10px;
+  font-weight: bold;
+}
+
+.quantity {
+  color: var(--color-secondary);
+  border: none;
+  width: 15px;
+}
+.quantity:focus {
+  outline: none;
+}
+
+.button :focus {
   color: var(--focus-color-button);
+}
+
+.block {
+  background-color: var(--color-background-disbled);
+  color: var(--input-color-background);
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  margin: 5px;
 }
 
 .button:hover {
   background-color: var(--hover-color-button);
 }
-

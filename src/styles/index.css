@@ -8,9 +8,11 @@ Variable reutilizables
   /*text*/
   --color-primary: rgb(226, 147, 20);
   --color-secondary: rgb(2, 2, 2);
+  --color-disabled: #fff;
   --color-error: rgb(255, 0, 0);
   /*background*/
   --color-background: rgb(37, 44, 54);
+  --color-background-disbled: rgb(137, 139, 142);
   --input-color-background: #fff;
   /*Pseudo-classes*/
   --hover-color-button: rgb(240, 150, 7);

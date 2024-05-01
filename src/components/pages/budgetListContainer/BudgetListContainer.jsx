@@ -1,56 +1,35 @@
 import BudgetList from "./BudgetList";
-import { useCounter } from "../../../hooks/useShowPassword";
-import { useState } from "react";
-const productos = [
-  {
-    categoria: "Cereales",
-    nombre: "Arrozx10kg",
-    precioU: 40890,
-    cantidad: 1,
-  },
-  {
-    categoria: "Harinas",
-    nombre: "Pasta Clásica Spaghetti Doria x 1000 g",
-    precioU: 4780,
-    cantidad: 1,
-  },
-  {
-    categoria: "Cereales",
-    nombre: "Cereal Choco Krispis bolsa resellable x410g",
-    precioU: 21550,
-    cantidad: 1,
-  },
-  {
-    categoria: "Granos",
-    nombre: "Frijoles San Jorge antioqueños con tocino lata x580g",
-    precioU: 12490,
-    cantidad: 1,
-  },
-];
+//import { useState } from "react";
+import { Link } from "react-router-dom";
+import styles from "./BudgetListContainer.module.css";
+import { BudgetContext } from "../../context/BudgetContext";
+import { useContext } from "react";
 
 const BudgetListContainer = () => {
-  const [addOne, SubOne, counter] = useCounter(1);
-  const [items, setItems] = useState([productos]);
-
+  const {budgetList} = useContext(BudgetContext);
+  const items = budgetList
   return (
     <>
-      <h4
-        style={{
-          width: "340px",
-          margin: "10px",
-          fontSize: "50px",
-          fontFamily: "var(--font-settings)",
-        }}
-      >
-        Budget List
-      </h4>
-      <BudgetList
-        products={items}
-        setItems={setItems}
-        addOne={addOne}
-        SubOne={SubOne}
-        counter={counter}
-      />
+      <section className={styles.section}>
+        <h4 className={styles.title}>Budget List</h4>
+        {items.map((item) => {
+          return (
+            <BudgetList
+              key={item.productName}
+              category={item.category}
+              productName={item.productName}
+              unitPrice={item.unitPrice}
+              quantity={item.quantity}
+            />
+          );
+        })}
+        <div>
+          <Link to="/budget">
+            <button className={styles.button}>Return</button>
+          </Link>
+          <button className={styles.button}>Save List</button>
+        </div>
+      </section>
     </>
   );
 };
