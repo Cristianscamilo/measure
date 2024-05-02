@@ -17,13 +17,15 @@ const BudgetContainer = () => {
     },
     onSubmit: (data) => {
       setBudgetList([...budgetList,{...data, quantity: counter }]);
+      
     },
     validationSchema: Yup.object({
       category: Yup.string().required(),
       productName: Yup.string().required(),
       unitPrice: Yup.number().required().min(2, "min 3"),
       quantity: Yup.number().required()
-    })
+    }),
+    validateOnChange: false,
   });
 
   return (

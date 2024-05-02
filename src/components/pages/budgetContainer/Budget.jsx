@@ -71,7 +71,7 @@ const Budget = ({
         <span className={styles.total}>Total: $45.000</span>
       </fieldset>
       <div className={styles.divButton}>
-        <Link to="/budgetList">
+        <Link to={budgetList.length > 0 && "/budgetList"}>
           <button
             className={budgetList.length == 0 ? styles.block : styles.button}
             type="button"

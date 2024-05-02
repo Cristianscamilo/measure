@@ -12,7 +12,7 @@ const BudgetListContainer = () => {
     <>
       <section className={styles.section}>
         <h4 className={styles.title}>Budget List</h4>
-        {items.map((item) => {
+        {items?.map((item) => {
           return (
             <BudgetList
               key={item.productName}
