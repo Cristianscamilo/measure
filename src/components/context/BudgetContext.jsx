@@ -5,12 +5,13 @@ export const BudgetContext = createContext();
 const BudgetContextProvider = ({ children }) => {
   const [budgetList, setBudgetList] = useState([]);
 
+  console.log(budgetList);
+  
   let data = {
     budgetList,
     setBudgetList,
   };
 
-  console.log(budgetList);
   return (
     <BudgetContext.Provider value={data}>{children}</BudgetContext.Provider>
   );

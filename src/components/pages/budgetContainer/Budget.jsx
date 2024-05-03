@@ -3,9 +3,6 @@ import styles from "./Budget.module.css";
 
 const Budget = ({
   budgetList,
-  addOne,
-  SubOne,
-  counter,
   handleSubmit,
   handleChange,
 }) => {
@@ -30,12 +27,20 @@ const Budget = ({
           placeholder="Product name"
           onChange={handleChange}
         />
-        <input
-          type="text"
-          className={styles.input}
-          name="-------"
-          placeholder="Selecciona una unidad (pendiente)"
-        />
+        {/* <select className={styles.select} onChange={handleChange}> */}
+        {/* <option value="" disabled selected hidden> */}
+        {/* Selecciona una unidad */}
+        {/* </option> */}
+        {/* <option value="kg">Kilogram (kg)</option> */}
+        {/* <option value="g">Gram (g)</option> */}
+        {/* <option value="L">Liter (L)</option> */}
+        {/* <option value="ml">Milliliter (ml)</option> */}
+        {/* <option value="unit">Unit (unit)</option> */}
+        {/* <option value="lbs">Pound (lbs)</option> */}
+        {/* <option value="oz">Ounce (oz)</option> */}
+        {/* <option value="gal">Gallon (gal)</option> */}
+        {/* <option value="dozen">Dozen</option> */}
+        {/* </select> */}
         <input
           type="number"
           className={styles.input}
@@ -43,30 +48,16 @@ const Budget = ({
           placeholder="Unit price"
           onChange={handleChange}
         />
-        <p>
+        <p className={styles.paragraph}>
           <strong>Quantity:</strong>
-          <button
-            type="button"
-            className={counter == 1 ? styles.disabled : styles.buttonQuantity}
-            onClick={SubOne}
-            disabled={counter == 1 ? true : false}
-          >
-            -
-          </button>
           <input
             type="number"
             className={styles.quantity}
             name="quantity"
-            value={counter}
             onChange={handleChange}
+            min={1}
+            step={1}
           />
-          <button
-            type="button"
-            className={styles.buttonQuantity}
-            onClick={addOne}
-          >
-            +
-          </button>
         </p>
         <span className={styles.total}>Total: $45.000</span>
       </fieldset>

@@ -1,32 +1,24 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Budget from "./Budget";
 import { BudgetContext } from "../../context/BudgetContext";
-import { useCounter } from "../../../hooks/useShowPassword";
-import { useFormik } from "formik";
-import * as Yup from "yup"
 
 const BudgetContainer = () => {
-  const [addOne, SubOne, counter] = useCounter();
   const { budgetList, setBudgetList } = useContext(BudgetContext);
-  const { handleSubmit, handleChange } = useFormik({
-    initialValues: {
-      category: "",
-      productName: "",
-      unitPrice: "",
-      quantity: counter,
-    },
-    onSubmit: (data) => {
-      setBudgetList([...budgetList,{...data, quantity: counter }]);
-      
-    },
-    validationSchema: Yup.object({
-      category: Yup.string().required(),
-      productName: Yup.string().required(),
-      unitPrice: Yup.number().required().min(2, "min 3"),
-      quantity: Yup.number().required()
-    }),
-    validateOnChange: false,
-  });
+const [product, setProduct] = useState({
+  category: "",
+  productName: "",
+  unitPrice: "",
+  quantity: "",
+})
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setBudgetList([...budgetList, product])
+    console.log(budgetList.length);
+  };
+  const handleChange = (event) => {
+    setProduct({...product, [event.target.name]: event.target.value});
+    
+  };
 
   return (
     <>
@@ -42,9 +34,6 @@ const BudgetContainer = () => {
       </h3>
       <Budget
         budgetList={budgetList}
-        addOne={addOne}
-        SubOne={SubOne}
-        counter={counter}
         handleSubmit={handleSubmit}
         handleChange={handleChange}
       />
@@ -53,3 +42,5 @@ const BudgetContainer = () => {
 };
 
 export default BudgetContainer;
+
+

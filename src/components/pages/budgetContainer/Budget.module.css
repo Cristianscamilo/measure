@@ -48,6 +48,10 @@ label {
   flex-direction: row;
   justify-content: center;
 }
+.box{
+  display: flex;
+  align-items: center;
+}
 .button {
   background-color: var(--color-primary);
   width: 150px;
@@ -78,18 +82,28 @@ label {
   font-weight: bold;
 }
 
-.quantity {
-  color: var(--color-secondary);
-  border: none;
-  width: 15px;
+.paragraph{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.quantity { 
+  width: 60px;
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 .quantity:focus {
-  outline: none;
+  color: var(--color-secondary); 
+  width: 60px;
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px var(--focus-color-button);
 }
 
-.button :focus {
-  color: var(--focus-color-button);
-}
 
 .block {
   background-color: var(--color-background-disbled);
