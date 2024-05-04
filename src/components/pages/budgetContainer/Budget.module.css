@@ -8,6 +8,7 @@
 fieldset {
   border: none;
   width: 320px;
+  padding:10px 20px 10px 20px;
 }
 
 legend {
@@ -32,6 +33,9 @@ legend {
   color: var(--color-title);
   font-size: 20px;
   padding: 10px;
+}
+.input:focus{
+  color: var(--color-primary);
 }
 
 label {
@@ -85,7 +89,8 @@ label {
 .paragraph{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 12px;
 
 }
 .quantity { 
@@ -94,9 +99,11 @@ label {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  background-color: var(--color-background);
+  color: var(--color-title);
 }
 .quantity:focus {
-  color: var(--color-secondary); 
+  color: var(--color-primary); 
   width: 60px;
   margin-left: 20px;
   padding: 10px;
