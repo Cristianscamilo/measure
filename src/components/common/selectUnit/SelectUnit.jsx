@@ -1,5 +1,5 @@
 import Select from "react-select";
-import {SelectUnitStyles} from "./SelectUnitStyles";
+import { SelectUnitStyles } from "./SelectUnitStyles";
 
 const options = [
   { value: "kg", label: "Kilogram (kg)" },
@@ -13,13 +13,15 @@ const options = [
   { value: "dozen", label: "Dozen" },
 ];
 
-const SelectUnit = () => {
+ const SelectUnit = ({handleSelectChange}) => {
   return (
     <div>
       <Select
         options={options}
+
         placeholder={"Select the unit (kg, ml, g, etc.)."}
         styles={SelectUnitStyles}
+        onChange={handleSelectChange}
       />
     </div>
   );

@@ -1,5 +1,4 @@
 import BudgetList from "./BudgetList";
-//import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./BudgetListContainer.module.css";
 import { BudgetContext } from "../../context/BudgetContext";
@@ -12,14 +11,16 @@ const BudgetListContainer = () => {
     <>
       <section className={styles.section}>
         <h4 className={styles.title}>Budget List</h4>
-        {items?.map((item) => {
+        {items?.map(({productName, category, unitPrice, quantity, discountedPrice, selectOption}, index) => {
           return (
             <BudgetList
-              key={item.productName}
-              category={item.category}
-              productName={item.productName}
-              unitPrice={item.unitPrice}
-              quantity={item.quantity}
+              key={index}
+              category={category}
+              productName={productName}
+              unitPrice={unitPrice}
+              quantity={quantity}
+              discountedPrice={discountedPrice}
+              selectOption={selectOption}
             />
           );
         })}

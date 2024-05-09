@@ -6,7 +6,7 @@ const BudgetContextProvider = ({ children }) => {
   const [budgetList, setBudgetList] = useState([]);
 
   console.log(budgetList);
-  
+
   let data = {
     budgetList,
     setBudgetList,

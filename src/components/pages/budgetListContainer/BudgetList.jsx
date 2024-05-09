@@ -1,6 +1,14 @@
+import ItemCountContainer from "../../common/itemCount/ItemCountContainer";
 import styles from "./BudgetList.module.css";
 
-const BudgetList = ({ addOne, SubOne, counter, category, productName, unitPrice, quantity }) => {
+const BudgetList = ({
+  category,
+  productName,
+  unitPrice,
+  quantity,
+  discountedPrice,
+  selectOption,
+}) => {
   return (
     <>
       <article className={styles.card}>
@@ -12,24 +20,20 @@ const BudgetList = ({ addOne, SubOne, counter, category, productName, unitPrice,
           <strong>Product:</strong> {productName}
         </p>
         <p>
-          <strong>unit:</strong> kg, lt
-        </p>
-         <p>
-          <strong>Quantity:</strong>
-          <button className={styles.button} onClick={SubOne} disabled={counter == 1 ? true : false}>
-            -
-          </button>
-          <span>{counter}</span>
-          <button className={styles.button} onClick={addOne}>+</button>
+          <strong>Unit:</strong> {selectOption}
         </p>
         <p>
-          <strong>Price by unit :</strong> $ {unitPrice}
+          <strong>Quantity: </strong>
+          <ItemCountContainer quantity={quantity} />
         </p>
-        {counter > 1 && (
-          <p>
-            <strong>Price x {quantity}:</strong> $500
+        <div className={styles.prices}>
+          <p className={styles.prices}>
+            <strong>Price by unit</strong> $ {unitPrice}
           </p>
-        )}
+          <p className={styles.prices}>
+            <strong>Discounted Price</strong> $ {discountedPrice}
+          </p>
+        </div>
       </article>
     </>
   );

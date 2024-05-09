@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./Budget.module.css";
 import SelectUnit from "../../common/selectUnit/SelectUnit";
 
-const Budget = ({ budgetList, handleSubmit, handleChange }) => {
+const Budget = ({ budgetList, handleSubmit, handleChange, handleSelectChange }) => {
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <fieldset>
@@ -12,6 +12,8 @@ const Budget = ({ budgetList, handleSubmit, handleChange }) => {
           className={styles.input}
           name="category"
           placeholder="Category"
+          pattern="[a-zA-Z]+"
+          title="Only letters allowed"
           onChange={handleChange}
         />
       </fieldset>
@@ -21,16 +23,20 @@ const Budget = ({ budgetList, handleSubmit, handleChange }) => {
           type="text"
           className={styles.input}
           name="productName"
+          required
           placeholder="Product name"
           onChange={handleChange}
         />
-        <SelectUnit />
+        <SelectUnit handleSelectChange={handleSelectChange} />
         <p className={styles.paragraph}>
           <strong>Quantity:</strong>
           <input
             type="number"
             className={styles.quantity}
             name="quantity"
+            pattern="[0-9]+.*"
+            required
+            title="Please enter at least one number"
             onChange={handleChange}
             min={1}
             step={1}
@@ -41,9 +47,20 @@ const Budget = ({ budgetList, handleSubmit, handleChange }) => {
           className={styles.input}
           name="unitPrice"
           placeholder="Unit price"
+          pattern="[0-9]+.*"
+          title="Please enter the price"
           onChange={handleChange}
         />
-        <span className={styles.total}>Total: $45.000</span>
+        <input
+          type="number"
+          className={styles.input}
+          name="discountedPrice"
+          required
+          pattern="[0-9]+.*"
+          title="Please enter the discounted price"
+          placeholder="Discounted price"
+          onChange={handleChange}
+        />
       </fieldset>
       <div className={styles.divButton}>
         <Link to={budgetList.length > 0 && "/budgetList"}>

@@ -4,21 +4,31 @@ import { BudgetContext } from "../../context/BudgetContext";
 
 const BudgetContainer = () => {
   const { budgetList, setBudgetList } = useContext(BudgetContext);
-const [product, setProduct] = useState({
-  category: "",
-  productName: "",
-  unitPrice: "",
-  quantity: "",
-})
+  const [product, setProduct] = useState({
+    category: "",
+    productName: "",
+    unitPrice: "",
+    quantity: "",
+    discountedPrice: "",
+    selectOption: "",
+  });
   const handleSubmit = (event) => {
     event.preventDefault();
-    setBudgetList([...budgetList, product])
-    console.log(budgetList.length);
+    setBudgetList([...budgetList, product]);
+    //console.log(budgetList);
   };
   const handleChange = (event) => {
-    setProduct({...product, [event.target.name]: event.target.value});
-    
+    const { name, value } = event.target;
+    const newValue =
+      name === "unitPrice" || name === "quantity" || name === "discountedPrice"
+        ? parseInt(value)
+        : value;
+    setProduct({ ...product, [name]: newValue });
   };
+
+  const handleSelectChange = (selectOption)=> {
+    setProduct({...product, selectOption: selectOption.value});
+  }
 
   return (
     <>
@@ -36,11 +46,10 @@ const [product, setProduct] = useState({
         budgetList={budgetList}
         handleSubmit={handleSubmit}
         handleChange={handleChange}
+        handleSelectChange={handleSelectChange}
       />
     </>
   );
 };
 
 export default BudgetContainer;
-
-
