@@ -8,6 +8,23 @@
   background-color: var(--color-background);
   box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
     rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  align-items: center;
+}
+.close {
+  color: var(--color-background);
+  border: none;
+  cursor: pointer;
+  font-weight: bolt;
+  font-weight: 800;
+  background-color: var(--color-primary);
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin: 0 10px 0 250px;
+}
+.close:hover {
+  color: var(--color-error);
+  background-color: var(--color-title);
 }
 p {
   color: var(--color-title);
@@ -28,11 +45,4 @@ strong {
 .title {
   color: var(--color-title);
   font-size: 20px;
-}
-
-.prices {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
 }

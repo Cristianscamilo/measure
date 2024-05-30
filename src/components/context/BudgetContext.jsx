@@ -7,9 +7,17 @@ const BudgetContextProvider = ({ children }) => {
 
   console.log(budgetList);
 
+  const removeByName = (productName) => {
+    let newBudget = budgetList?.filter((element)=> element.productName !== productName)
+    setBudgetList(newBudget);
+  }
+
+  
+
   let data = {
     budgetList,
     setBudgetList,
+    removeByName
   };
 
   return (

@@ -5,16 +5,16 @@ import { BudgetContext } from "../../context/BudgetContext";
 import { useContext } from "react";
 
 const BudgetListContainer = () => {
-  const {budgetList} = useContext(BudgetContext);
-  const items = budgetList
+  const {budgetList, removeByName} = useContext(BudgetContext);
   return (
     <>
       <section className={styles.section}>
         <h4 className={styles.title}>Budget List</h4>
-        {items?.map(({productName, category, unitPrice, quantity, discountedPrice, selectOption}, index) => {
+        {budgetList?.map(({productName, category, unitPrice, quantity, discountedPrice, selectOption}, index) => {
           return (
             <BudgetList
               key={index}
+              removeByName={removeByName}
               category={category}
               productName={productName}
               unitPrice={unitPrice}

@@ -15,7 +15,7 @@ const BudgetContainer = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setBudgetList([...budgetList, product]);
-    //console.log(budgetList);
+
   };
   const handleChange = (event) => {
     const { name, value } = event.target;
