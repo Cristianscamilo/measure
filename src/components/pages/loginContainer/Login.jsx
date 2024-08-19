@@ -15,9 +15,10 @@ const Login = ({ status, showPassword }) => {
       console.log(data);
     },
     validationSchema: Yup.object({
-      user: Yup.string().required().min(5,"user must be at least 5 characters"),
-      password: Yup.string()
-        .required(),
+      user: Yup.string()
+        .required()
+        .min(5, "user must be at least 5 characters"),
+      password: Yup.string().required(),
     }),
     validateOnChange: false,
   });
@@ -54,9 +55,9 @@ const Login = ({ status, showPassword }) => {
             Forgot Password?
           </button>
           <Link to="/budget">
-          <button type="submit" className={styles.button}>
-            Log in
-          </button>
+            <button type="submit" className={styles.button}>
+              Log in
+            </button>
           </Link>
           {showPassword ? (
             <BsFillEyeSlashFill
@@ -75,7 +76,7 @@ const Login = ({ status, showPassword }) => {
         <p className={styles.paragraph}>
           Don&apos;t have an account?
           <Link to="/signUp">
-          <span className={styles.span}> Sign up</span>
+            <span className={styles.span}> Sign up</span>
           </Link>
         </p>
       </article>
