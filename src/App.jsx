@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
           <Route path="/" element={<LoginContainer />} />
-          <Route path="/signUp" element={<SignUpContainer />} />
+          { <Route path="/signUp" element={<SignUpContainer />} />}
             <Route path="/budget" element={<BudgetContainer />} />
             <Route path="/budgetList" element={<BudgetListContainer />} />
           </Route>
