@@ -13,12 +13,11 @@ const options = [
   { value: "dozen", label: "Dozen" },
 ];
 
- const SelectUnit = ({handleSelectChange}) => {
+const SelectUnit = ({ handleSelectChange }) => {
   return (
     <div>
       <Select
         options={options}
-
         placeholder={"Select the unit (kg, ml, g, etc.)."}
         styles={SelectUnitStyles}
         onChange={handleSelectChange}

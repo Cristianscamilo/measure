@@ -27,7 +27,9 @@ const Budget = ({ budgetList, handleSubmit, handleChange, handleSelectChange }) 
           placeholder="Product name"
           onChange={handleChange}
         />
-        <SelectUnit handleSelectChange={handleSelectChange} />
+        
+        <SelectUnit handleSelectChange={handleSelectChange} /> 
+
         <p className={styles.paragraph}>
           <strong>Quantity:</strong>
           <input
